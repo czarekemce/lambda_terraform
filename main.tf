@@ -30,7 +30,7 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
     lambda_function_arn = aws_lambda_function.copytobucket.arn
     events              = ["s3:ObjectCreated:*"]
     filter_prefix       = ""
-    filter_suffix       = ".log"
+    filter_suffix       = ""
   }
 
   depends_on = [aws_lambda_permission.allow_bucket]
